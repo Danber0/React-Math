@@ -1,0 +1,47 @@
+.header {
+  margin-top: 20px;
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .menu__task {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 110%;
+      color: #263238;
+
+      span {
+        color: rgba(100, 100, 100, 0.3);
+      }
+    }
+
+    .menu__navigation {
+      ul {
+        display: flex;
+
+        .active {
+          a {
+            color: #85abff;
+          }
+        }
+
+        li {
+          &:not(:last-child) {
+            padding-right: 100px;
+          }
+          a {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 30px;
+            color: #171717;
+          }
+        }
+      }
+    }
+  }
+}
