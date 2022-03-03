@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { arrayActions } from "../../config/data";
 
 import "./OperationChoose.scss";
-import { ActionTaskContext } from "../../App";
+
+import { generateTasks } from "../../config/generateTask";
+import { setNewTask } from "../../store/actions/tasks";
+
+interface InitialStateAction {
+  actionMark: string[];
+  difficulty: string;
+  count: string;
+}
 
 export const OperationChoose: React.FC = () => {
-  const { action, setAction } = React.useContext(ActionTaskContext);
+  const dispatch = useDispatch();
+  // const { task } = useAppSelector((state) => state);
+  const [action, setAction] = useState<InitialStateAction>({
+    actionMark: ["+"],
+    difficulty: "1",
+    count: "5",
+  });
 
   // Хз какой тут тип писать
   const onClickChangeAction = (event: any) => {
     if (event.target.className.includes("mark")) {
-      if (!action.actionMark.includes(event.target.textContent)) {
+      if (
+        !action.actionMark.includes(event.target.textContent) &&
+        action.count.length
+      ) {
         setAction({
           ...action,
           actionMark: [...action.actionMark, event.target.textContent],
@@ -38,16 +57,19 @@ export const OperationChoose: React.FC = () => {
 
   const generateRandomTask = () => {
     if (action.difficulty === "1") {
-      for (let i = 0; i <= Number(action.count); i++) {
-        const firstNumber = Math.ceil(Math.random() * 30);
-        const secondNumber = Math.ceil(Math.random() * 30);
-        console.log(firstNumber, secondNumber);
-      }
+      const task = generateTasks(Number(action.count), action.actionMark);
+      dispatch(setNewTask(task));
     }
   };
 
   const handleClickStartTask = () => {
-    generateRandomTask();
+    const regExp = new RegExp(/^\d+$/g);
+    if (regExp.test(action.count)) {
+      generateRandomTask();
+    } else {
+      setAction({ ...action, count: "" });
+      alert("Введите целое число!");
+    }
   };
 
   return (
@@ -61,7 +83,7 @@ export const OperationChoose: React.FC = () => {
                 key={index}
                 onClick={onClickChangeAction}
                 className={`settings__action__mark circle checkbox ${
-                  action.actionMark.includes(mark) && "active"
+                  action.actionMark.includes(mark) ? "active" : ""
                 }`}
               >
                 {mark}
@@ -77,7 +99,7 @@ export const OperationChoose: React.FC = () => {
                 key={index}
                 onClick={onClickChangeAction}
                 className={`action__difficult__block block-check ${
-                  action.difficulty.includes(numberDifficult) && "active"
+                  action.difficulty.includes(numberDifficult) ? "active" : ""
                 }`}
               >
                 {numberDifficult}
@@ -93,7 +115,7 @@ export const OperationChoose: React.FC = () => {
                 key={index}
                 onClick={onClickChangeAction}
                 className={`action__count__block block-check ${
-                  action.count === numberCount && "active"
+                  action.count === numberCount ? "active" : ""
                 }`}
               >
                 {numberCount}
