@@ -1,9 +1,11 @@
 import { createStore, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { TaskReducer } from "./reducers/tasks";
+import { ActionReducer } from "./reducers/actionInfo";
 
 const rootReducers = combineReducers({
-  task: TaskReducer,
+  tasks: TaskReducer,
+  actionInfo: ActionReducer,
 });
 
 export const store = createStore(rootReducers, composeWithDevTools());

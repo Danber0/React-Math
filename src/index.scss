@@ -2,10 +2,14 @@
 
 body,
 button {
+  background-color: #f0f0f0;
   font-family: "Nunito", sans-serif;
+  padding-top: 15px;
+  overflow: hidden;
 }
 
 .container {
   max-width: 1170px;
   margin: 0 auto;
+  height: 100vh;
 }

@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import MainPagePicture from "../../assets/img/main-page-picture.svg";
+
 import "./MainPage.scss";
 
 export const MainPage = () => {
@@ -11,7 +14,9 @@ export const MainPage = () => {
           На этом сайте ты сможешь прокачать свой мозг при помощи онлайн
           тренажера нажми кнопку ниже, чтобы начать
         </p>
-        <button>Начать тренировку</button>
+        <button>
+          <Link to="/choice">Начать тренировку</Link>
+        </button>
       </div>
       <div className="main-content__image">
         <img src={MainPagePicture} alt="MainPage" />

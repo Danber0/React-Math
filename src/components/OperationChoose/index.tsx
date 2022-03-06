@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
+import { InitialStateAction } from "../../types";
+
+import {
+  generateTasksAdv,
+  generateTasksEasy,
+  generateTasksHard,
+  generateTasksIns,
+  generateTasksMed,
+} from "../../config/generateTask";
 import { arrayActions } from "../../config/data";
 
 import "./OperationChoose.scss";
 
-import { generateTasks } from "../../config/generateTask";
-import { setNewTask } from "../../store/actions/tasks";
-
-interface InitialStateAction {
-  actionMark: string[];
-  difficulty: string;
-  count: string;
-}
+import { countNewTask, setNewTask } from "../../store/actions/tasks";
+import { setActionInfo } from "../../store/actions/actionInfo";
+import { Link, useNavigate } from "react-router-dom";
+import { log } from "util";
 
 export const OperationChoose: React.FC = () => {
   const dispatch = useDispatch();
-  // const { task } = useAppSelector((state) => state);
+  const navigate = useNavigate();
   const [action, setAction] = useState<InitialStateAction>({
     actionMark: ["+"],
     difficulty: "1",
@@ -28,17 +33,19 @@ export const OperationChoose: React.FC = () => {
     if (event.target.className.includes("mark")) {
       if (
         !action.actionMark.includes(event.target.textContent) &&
-        action.count.length
+        action.count
       ) {
         setAction({
           ...action,
           actionMark: [...action.actionMark, event.target.textContent],
         });
       } else {
-        const newArray = action.actionMark.filter(
-          (el) => el !== event.target.textContent
-        );
-        setAction({ ...action, actionMark: newArray });
+        if (action.actionMark.length >= 2) {
+          const newArray = action.actionMark.filter(
+            (el) => el !== event.target.textContent
+          );
+          setAction({ ...action, actionMark: newArray });
+        }
       }
     }
 
@@ -57,15 +64,42 @@ export const OperationChoose: React.FC = () => {
 
   const generateRandomTask = () => {
     if (action.difficulty === "1") {
-      const task = generateTasks(Number(action.count), action.actionMark);
+      const task = generateTasksEasy(Number(action.count), action.actionMark);
       dispatch(setNewTask(task));
+      dispatch(countNewTask(task));
+    }
+    if (action.difficulty === "2") {
+      const task = generateTasksMed(Number(action.count), action.actionMark);
+      dispatch(setNewTask(task));
+      dispatch(countNewTask(task));
+    }
+    if (action.difficulty === "3") {
+      const task = generateTasksAdv(Number(action.count), action.actionMark);
+      dispatch(setNewTask(task));
+      dispatch(countNewTask(task));
+    }
+    if (action.difficulty === "4") {
+      const task = generateTasksHard(Number(action.count), action.actionMark);
+      dispatch(setNewTask(task));
+      dispatch(countNewTask(task));
+    }
+    if (action.difficulty === "5") {
+      const task = generateTasksIns(Number(action.count), action.actionMark);
+      dispatch(setNewTask(task));
+      dispatch(countNewTask(task));
     }
   };
 
   const handleClickStartTask = () => {
     const regExp = new RegExp(/^\d+$/g);
     if (regExp.test(action.count)) {
-      generateRandomTask();
+      if (action.actionMark.length <= Number(action.count)) {
+        generateRandomTask();
+        dispatch(setActionInfo(action));
+        navigate("/solve");
+      } else {
+        alert("Нельзя, чтобы кол-во действий было больше, чем кол-во примеров");
+      }
     } else {
       setAction({ ...action, count: "" });
       alert("Введите целое число!");

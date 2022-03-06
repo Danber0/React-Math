@@ -69,6 +69,7 @@ figcaption,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 output,
@@ -82,8 +83,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -95,6 +94,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 section {
@@ -118,6 +118,13 @@ q:after {
   content: "";
   content: none;
 }
+
+/* Don't kill focus outline for keyboard users: http://24ways.org/2009/dont-lose-your-focus */
+a:hover,
+a:active {
+  outline: none;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
