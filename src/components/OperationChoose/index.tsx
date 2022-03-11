@@ -16,8 +16,7 @@ import "./OperationChoose.scss";
 
 import { countNewTask, setNewTask } from "../../store/actions/tasks";
 import { setActionInfo } from "../../store/actions/actionInfo";
-import { Link, useNavigate } from "react-router-dom";
-import { log } from "util";
+import { useNavigate } from "react-router-dom";
 
 export const OperationChoose: React.FC = () => {
   const dispatch = useDispatch();
