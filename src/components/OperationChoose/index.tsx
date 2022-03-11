@@ -92,6 +92,10 @@ export const OperationChoose: React.FC = () => {
   const handleClickStartTask = () => {
     const regExp = new RegExp(/^\d+$/g);
     if (regExp.test(action.count)) {
+      if (action.count > "2000") {
+        alert("Введите число меньше 2000.");
+        return setAction({ ...action, count: "" });
+      }
       if (action.actionMark.length <= Number(action.count)) {
         generateRandomTask();
         dispatch(setActionInfo(action));
