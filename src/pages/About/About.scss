@@ -1,0 +1,40 @@
+.about {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &__image {
+    position: relative;
+    top: 0;
+    right: 70px;
+  }
+
+  &__information {
+    h1 {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 57px;
+      color: #1a3166;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 29px;
+      line-height: 48px;
+      color: #1a3166;
+      a {
+        text-decoration: none;
+        color: #8cb0ff;
+        font-size: 40px;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: #407bff;
+          transition: color 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+}

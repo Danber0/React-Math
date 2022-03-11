@@ -4,7 +4,6 @@ import Calculator from "../../assets/img/Calculator.svg";
 import { OperationChoose } from "../../components/OperationChoose";
 
 import "./ActionChoice.scss";
-import { useAppSelector } from "../../hooks";
 
 export const ActionChoice: React.FC = () => {
   return (

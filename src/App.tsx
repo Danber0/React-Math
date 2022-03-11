@@ -40,7 +40,7 @@ function App() {
         setTimer(0);
       }
     }
-  }, [location.pathname]);
+  }, [dispatch, location.pathname]);
 
   return (
     <div className="App">

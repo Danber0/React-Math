@@ -12,10 +12,13 @@ export const TaskReducer = (state = initialState, action: any) => {
       const answersTask = [...action.payload];
       const newAnswerTask = answersTask.map((task) => {
         return task.includes("x")
-          ? eval(task.replaceAll("x", "*"))
+          ? // eslint-disable-next-line no-eval
+            eval(task.replaceAll("x", "*"))
           : task.includes("÷")
-          ? eval(task.replaceAll("÷", "/"))
-          : eval(task);
+          ? // eslint-disable-next-line no-eval
+            eval(task.replaceAll("÷", "/"))
+          : // eslint-disable-next-line no-eval
+            eval(task);
       });
 
       return { ...state, answerTask: newAnswerTask };

@@ -32,6 +32,7 @@
 
     button {
       background: linear-gradient(94.39deg, #709cff 21.33%, #5f84d8 81.49%);
+      transition: transform 0.2s ease-in-out;
       box-shadow: 0 0 20px rgba(112, 156, 255, 0.6);
       border-radius: 15px;
       border: none;
@@ -42,6 +43,11 @@
       line-height: 34px;
       color: #ffffff;
       cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+      }
     }
   }
 

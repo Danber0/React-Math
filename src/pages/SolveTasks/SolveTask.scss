@@ -13,6 +13,34 @@
     border-radius: 70px;
     height: 450px;
 
+    .correct {
+      color: #51e72c;
+      transition: color 0.25s ease-in-out;
+
+      input {
+        color: #51e72c;
+        transition: color 0.25s ease-in-out;
+        &::placeholder {
+          color: #51e72c;
+          transition: color 0.25s ease-in-out;
+        }
+      }
+    }
+
+    .wrong {
+      color: #ff4e4e;
+      transition: color 0.25s ease-in-out;
+
+      input {
+        color: #ff4e4e;
+        transition: color 0.25s ease-in-out;
+        &::placeholder {
+          color: #ff4e4e;
+          transition: color 0.25s ease-in-out;
+        }
+      }
+    }
+
     &-top {
       display: flex;
       justify-content: space-between;
@@ -44,6 +72,7 @@
       line-height: 48px;
       height: 100%;
       color: #777777;
+      transition: color 0.25s ease-in-out;
 
       input {
         width: 60px;
@@ -52,6 +81,7 @@
         background: none;
         border: none;
         outline: none;
+        transition: color 0.25s ease-in-out;
       }
     }
   }
