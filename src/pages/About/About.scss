@@ -7,9 +7,11 @@
     position: relative;
     top: 0;
     right: 70px;
+    animation: animation-image 1s ease-in-out;
   }
 
   &__information {
+    animation: animation-block-about 1s ease-in-out;
     h1 {
       font-style: normal;
       font-weight: 800;
@@ -36,5 +38,23 @@
         }
       }
     }
+  }
+}
+
+@keyframes animation-block-about {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

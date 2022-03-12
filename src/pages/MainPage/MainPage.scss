@@ -8,6 +8,7 @@
     max-width: 635px;
     width: 100%;
     color: #171717;
+    animation: animation-text 1s ease-in-out;
 
     a {
       color: inherit;
@@ -56,5 +57,26 @@
     align-items: center;
     position: absolute;
     right: -115px;
+    animation: animation-image 1.5s ease-in-out;
+  }
+}
+
+@keyframes animation-text {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animation-image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

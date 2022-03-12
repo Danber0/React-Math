@@ -200,7 +200,7 @@ export const generateTasksAdv = (countTask: number, mathActions: string[]) => {
   if (mathActions.includes("÷")) {
     while (arrayTasksDivision.length + 1 <= countTask / mathActions.length) {
       const firstNumber = Math.ceil(Math.random() * (150 - 50)) + 50;
-      const secondNumber = Math.ceil(Math.random() * (10 - 1)) + 1;
+      const secondNumber = Math.ceil(Math.random() * (10 - 3)) + 3;
 
       if (
         firstNumber % secondNumber === 0 &&
@@ -280,7 +280,7 @@ export const generateTasksHard = (countTask: number, mathActions: string[]) => {
   if (mathActions.includes("÷")) {
     while (arrayTasksDivision.length + 1 <= countTask / mathActions.length) {
       const firstNumber = Math.ceil(Math.random() * (250 - 100)) + 100;
-      const secondNumber = Math.ceil(Math.random() * (10 - 1)) + 1;
+      const secondNumber = Math.ceil(Math.random() * (10 - 3)) + 3;
 
       if (
         firstNumber % secondNumber === 0 &&
@@ -363,7 +363,7 @@ export const generateTasksIns = (countTask: number, mathActions: string[]) => {
   if (mathActions.includes("÷")) {
     while (arrayTasksDivision.length + 1 <= countTask / mathActions.length) {
       const firstNumber = Math.ceil(Math.random() * (400 - 200)) + 200;
-      const secondNumber = Math.ceil(Math.random() * (15 - 1)) + 1;
+      const secondNumber = Math.ceil(Math.random() * (15 - 3)) + 3;
 
       if (
         firstNumber % secondNumber === 0 &&

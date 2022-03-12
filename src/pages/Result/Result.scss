@@ -3,6 +3,8 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  animation: animation-image 1s ease-in-out;
+
   &__content {
     display: flex;
     align-items: center;
@@ -14,14 +16,14 @@
     min-height: 450px;
 
     &-image {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
 
     &-title {
       font-style: normal;
       font-weight: 900;
       font-size: 35px;
-      line-height: 35px;
+      line-height: 45px;
       text-align: center;
       letter-spacing: 0.05em;
       color: #6187dc;
@@ -60,5 +62,14 @@
         text-decoration: none;
       }
     }
+  }
+}
+
+@keyframes animation-block-result {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

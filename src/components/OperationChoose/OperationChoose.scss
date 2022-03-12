@@ -1,5 +1,7 @@
 .choice-main__settings {
   user-select: none;
+  animation: animation-block-task 1s ease-in-out;
+
   .settings__action {
     h3 {
       font-style: normal;
@@ -147,5 +149,16 @@
   .active {
     box-shadow: 0 0 20px rgba(95, 94, 94, 0.5);
     background-color: #407bff;
+  }
+}
+
+@keyframes animation-block-task {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
