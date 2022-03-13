@@ -132,3 +132,33 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 820px) {
+  .solve {
+    &__content {
+      height: 400px;
+      &-top {
+        padding: 10px 40px 0 40px;
+        div {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .solve {
+    &__content {
+      height: 400px;
+      &-top {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 40px 0 40px;
+        div {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

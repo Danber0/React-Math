@@ -8,8 +8,24 @@ button {
   overflow: hidden;
 }
 
+.App {
+  height: 100vh;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 535px) {
+  .container {
+    margin: 0 10px;
+  }
 }

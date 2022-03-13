@@ -30,3 +30,67 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 1140px) {
+  .choice-main {
+    justify-content: center;
+    .choice-main__img {
+      display: none;
+    }
+    .choice-main__settings {
+      .settings__action {
+        justify-content: normal;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    margin: 0;
+  }
+  .choice-main {
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    .choice-main__settings {
+      .checkbox {
+        width: 60px;
+        height: 60px;
+      }
+      .block-check {
+        width: 55px;
+        height: 55px;
+        #count-five {
+          font-size: 30px;
+          width: 55px;
+          height: 55px;
+        }
+      }
+      .circle {
+        font-size: 32px;
+      }
+      .settings__action {
+        div {
+          h3 {
+            font-size: 23px;
+          }
+        }
+        .action__choose__difficult {
+          .action__difficult {
+            .action__difficult__block {
+              font-size: 30px;
+            }
+          }
+        }
+        .action__choose__count {
+          .action__count {
+            .action__count__block {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -73,3 +73,43 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 650px) {
+  .result {
+    &__content {
+      height: 400px;
+      &-image {
+        img {
+          width: 100px;
+        }
+        margin-bottom: 5px;
+      }
+      &-title {
+        font-size: 30px;
+      }
+      &-description {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .result {
+    &__content {
+      height: 400px;
+      &-image {
+        img {
+          width: 100px;
+        }
+        margin-bottom: 5px;
+      }
+      &-title {
+        font-size: 25px;
+      }
+      &-description {
+        font-size: 25px;
+      }
+    }
+  }
+}
