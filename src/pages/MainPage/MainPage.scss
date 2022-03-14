@@ -127,12 +127,15 @@
     }
     .main-content__description {
       h1 {
+        text-align: center;
         font-size: 40px;
       }
       p {
+        text-align: center;
         font-size: 18px;
       }
       button {
+        width: 100%;
         padding: 7px 15px;
         font-size: 20px;
       }
@@ -142,9 +145,10 @@
 
 @media (max-width: 350px) {
   .main-content {
+    justify-content: center;
     .main-content__image {
       img {
-        width: 300px;
+        display: none;
       }
     }
   }
