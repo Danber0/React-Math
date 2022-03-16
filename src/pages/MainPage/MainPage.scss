@@ -153,3 +153,37 @@
     }
   }
 }
+
+@media (max-height: 750px) {
+  .main-content {
+    .main-content__image {
+      img {
+        width: 270px;
+      }
+    }
+    .main-content__description {
+      p {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media (max-height: 700px) {
+  .main-content {
+    .main-content__description {
+      h1 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 15px;
+      }
+      button {
+        padding: 7px 15px;
+        font-size: 18px;
+      }
+    }
+  }
+}

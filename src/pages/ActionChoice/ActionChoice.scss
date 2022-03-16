@@ -94,3 +94,11 @@
     }
   }
 }
+
+@media (max-height: 620px) {
+  .choice-main {
+    &__settings {
+      padding-bottom: 50px;
+    }
+  }
+}
