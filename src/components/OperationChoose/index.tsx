@@ -17,6 +17,7 @@ import "./OperationChoose.scss";
 import { countNewTask, setNewTask } from "../../store/actions/tasks";
 import { setActionInfo } from "../../store/actions/actionInfo";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const OperationChoose: React.FC = () => {
   const dispatch = useDispatch();
@@ -93,7 +94,7 @@ export const OperationChoose: React.FC = () => {
     const regExp = new RegExp(/^\d+$/g);
     if (regExp.test(action.count)) {
       if (Number(action.count) >= Number(2001)) {
-        alert("Введите число меньше 2000.");
+        toast.error("Введите число меньше 2000.");
         return setAction({ ...action, count: "" });
       }
       if (action.actionMark.length <= Number(action.count)) {
@@ -101,11 +102,13 @@ export const OperationChoose: React.FC = () => {
         dispatch(setActionInfo(action));
         navigate("/solve");
       } else {
-        alert("Нельзя, чтобы кол-во действий было больше, чем кол-во примеров");
+        toast.error(
+          "Нельзя, чтобы кол-во действий было больше, чем кол-во примеров"
+        );
       }
     } else {
-      setAction({ ...action, count: "" });
-      alert("Введите целое число!");
+      setAction({ ...action, count: "5" });
+      toast.error("Введите целое число!");
     }
   };
 

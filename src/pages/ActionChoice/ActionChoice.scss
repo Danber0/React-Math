@@ -35,7 +35,9 @@
   .choice-main {
     justify-content: center;
     .choice-main__img {
-      display: none;
+      img {
+        display: none;
+      }
     }
     .choice-main__settings {
       .settings__action {

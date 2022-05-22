@@ -1,9 +1,17 @@
 import React, { useRef, useState } from "react";
 import "./SolveTask.scss";
+
+// @ts-ignore
+import successSound from "../../assets/sound/success.mp3";
+// @ts-ignore
+import soundError from "../../assets/sound/error.mp3";
+
 import { useAppSelector } from "../../hooks";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setResultTrue } from "../../store/actions/tasks";
+import { toast } from "react-toastify";
+import useSound from "use-sound";
 
 interface SolveTasksProps {
   timer: number;
@@ -12,9 +20,13 @@ interface SolveTasksProps {
 export const SolveTasks: React.FC<SolveTasksProps> = ({ timer }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   let correctRef: { current: HTMLDivElement | null } = useRef(null);
   const [inputValue, setInputValue] = useState("");
   const [currentTask, setCurrentTask] = useState(0);
+  const [soundSuccess] = useSound(successSound, { volume: 0.15 });
+  const [errorSound] = useSound(soundError, { volume: 0.15 });
+
   const { actionInfo } = useAppSelector((state) => state);
   const { tasks, answerTask } = useAppSelector((state) => state.tasks);
 
@@ -26,6 +38,8 @@ export const SolveTasks: React.FC<SolveTasksProps> = ({ timer }) => {
       timeOut = setTimeout(() => {
         correctRef.current?.classList.remove("correct");
       }, 450);
+      soundSuccess();
+      toast.success("Правильно!");
       setCurrentTask(currentTask + 1);
       setInputValue("");
 
@@ -38,6 +52,8 @@ export const SolveTasks: React.FC<SolveTasksProps> = ({ timer }) => {
     } else {
       if (String(answerTask[currentTask]).length === value.length) {
         correctRef.current?.classList.add("wrong");
+        toast.error("Не верно!");
+        errorSound();
         timeOut = setTimeout(() => {
           correctRef.current?.classList.remove("wrong");
         }, 450);
