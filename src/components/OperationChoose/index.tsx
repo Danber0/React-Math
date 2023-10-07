@@ -94,7 +94,7 @@ export const OperationChoose: React.FC = () => {
     const regExp = new RegExp(/^\d+$/g);
     if (regExp.test(action.count)) {
       if (Number(action.count) >= Number(2001)) {
-        toast.error("Введите число меньше 2000.");
+        toast.error("Number must be bellow 2000.");
         return setAction({ ...action, count: "" });
       }
       if (action.actionMark.length <= Number(action.count)) {
@@ -103,12 +103,12 @@ export const OperationChoose: React.FC = () => {
         navigate("/solve");
       } else {
         toast.error(
-          "Нельзя, чтобы кол-во действий было больше, чем кол-во примеров"
+          "Do more problems"
         );
       }
     } else {
       setAction({ ...action, count: "5" });
-      toast.error("Введите целое число!");
+      toast.error("Only integer number!");
     }
   };
 
@@ -116,7 +116,7 @@ export const OperationChoose: React.FC = () => {
     <div className="choice-main__settings">
       <div className="settings__action">
         <div className="action__choose__mark">
-          <h3>Арифметическое действие</h3>
+          <h3>Action</h3>
           <div className="action__mark">
             {arrayActions.actionMark.map((mark, index) => (
               <div
@@ -132,7 +132,7 @@ export const OperationChoose: React.FC = () => {
           </div>
         </div>
         <div className="action__choose__difficult">
-          <h3>Сложность примеров</h3>
+          <h3>Difficulty</h3>
           <div className="action__difficult">
             {arrayActions.difficulty.map((numberDifficult, index) => (
               <div
@@ -148,7 +148,7 @@ export const OperationChoose: React.FC = () => {
           </div>
         </div>
         <div className="action__choose__count">
-          <h3>Количество примеров</h3>
+          <h3>Count problems</h3>
           <div className="action__count">
             {arrayActions.count.map((numberCount, index) => (
               <div
@@ -172,7 +172,7 @@ export const OperationChoose: React.FC = () => {
             </div>
           </div>
         </div>
-        <button onClick={handleClickStartTask}>Начать</button>
+        <button onClick={handleClickStartTask}>Start</button>
       </div>
     </div>
   );

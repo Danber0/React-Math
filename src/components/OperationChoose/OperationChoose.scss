@@ -50,6 +50,8 @@
       .action__difficult {
         display: flex;
         justify-content: space-between;
+        gap: 10px;
+
         &__block {
           font-style: normal;
           font-weight: bold;

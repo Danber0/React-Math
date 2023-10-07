@@ -69,17 +69,17 @@ export const SolveTasks: React.FC<SolveTasksProps> = ({ timer }) => {
       <div className="solve__content">
         <div className="solve__content-top">
           <div>
-            Пример: <span className="color">{currentTask + 1} </span>из
+            Current problem: <span className="color">{currentTask + 1} </span>из
             <span className="color"> {actionInfo.count}</span>
           </div>
           <div>
-            Сложность: <span className="color">{actionInfo.difficulty}</span>
+            Difficulty: <span className="color">{actionInfo.difficulty}</span>
           </div>
           <div>
-            Знак(и): <span className="color">{actionInfo.actionMark}</span>
+            Action(s): <span className="color">{actionInfo.actionMark}</span>
           </div>
           <div>
-            Секунд: <span className="color">{timer}</span>
+            Seconds: <span className="color">{timer}</span>
           </div>
         </div>
         <div ref={correctRef} className="solve__content-task">

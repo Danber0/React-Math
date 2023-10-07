@@ -10,15 +10,14 @@ export const About = () => {
         <img src={AboutPicture} alt="AboutPicture" />
       </div>
       <div className="about__information">
-        <h1>Сайт был создан чтобы ты мог подтянуть устный счет!</h1>
+        <h1>The site was created for training</h1>
         <p>
-          Автор сайта и дизайна
+          Design author and developer of this site
           <a
             href="https://career.habr.com/danber"
             target="_blank"
             rel="noreferrer"
           >
-            {" "}
             Danber
           </a>
         </p>

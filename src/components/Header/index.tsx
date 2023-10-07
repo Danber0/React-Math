@@ -22,19 +22,19 @@ export const Header = () => {
           <nav>
             <ul>
               <li className={`${location.pathname === "/" ? "active" : ""} `}>
-                <Link to="/">Информация</Link>
+                <Link to="/">Information</Link>
               </li>
               <li
                 className={`${
                   location.pathname === "/choice" ? "active" : ""
                 } `}
               >
-                <Link to="/choice">Примеры</Link>
+                <Link to="/choice">Problems</Link>
               </li>
               <li
                 className={`${location.pathname === "/about" ? "active" : ""} `}
               >
-                <Link to="/about">О сайте</Link>
+                <Link to="/about">About</Link>
               </li>
             </ul>
           </nav>

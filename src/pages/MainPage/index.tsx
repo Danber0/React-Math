@@ -9,13 +9,12 @@ export const MainPage = () => {
   return (
     <div className="main-content">
       <div className="main-content__description">
-        <h1>Онлайн тренажер устного счета</h1>
+        <h1>Online brain training exercise</h1>
         <p>
-          На этом сайте ты сможешь прокачать свой мозг при помощи онлайн
-          тренажера нажми кнопку ниже, чтобы начать
+          On this site you can boost your brain with an online simulator. Press the button below to start
         </p>
         <button>
-          <Link to="/choice">Начать тренировку</Link>
+          <Link to="/choice">Start training</Link>
         </button>
       </div>
       <div className="main-content__image">

@@ -15,13 +15,13 @@ export const Result: React.FC<ResultProps> = ({ time }) => {
           <img src={success} alt="Success" />
         </div>
         <div className="result__content-title">
-          Поздравляю 🔥 <br /> Ты ответил на все вопросы 😲
+          Congratulations 🔥 <br /> You answered on all of the questions 😲
         </div>
         <div className="result__content-description">
-          Твое время составило <span className="color">{time}</span> сек!
+          Your time is <span className="color">{time}</span> сек!
         </div>
         <button className="result__content-button">
-          <Link to="/choice">Ещё раз</Link>
+          <Link to="/choice">Again</Link>
         </button>
       </div>
     </div>
