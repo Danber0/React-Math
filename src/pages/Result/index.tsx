@@ -18,7 +18,7 @@ export const Result: React.FC<ResultProps> = ({ time }) => {
           Congratulations 🔥 <br /> You answered on all of the questions 😲
         </div>
         <div className="result__content-description">
-          Your time is <span className="color">{time}</span> сек!
+          Your time is <span className="color">{time}</span> seconds!
         </div>
         <button className="result__content-button">
           <Link to="/choice">Again</Link>

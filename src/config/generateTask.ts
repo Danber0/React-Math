@@ -6,7 +6,6 @@ export const generateTasksEasy = (countTask: number, mathActions: string[]) => {
   let arrayTasksMultiply: string[] = [];
   let arrayTasksDivision: string[] = [];
 
-  //Проверяю если число примеров делится без остатка, чтобы не было бага когда не додали примеров
   if (mathActions.length % countTask !== 0) {
     while (arrayTasksRest.length + 1 <= countTask % mathActions.length) {
       const firstNumber = Math.ceil(Math.random() * 25);
@@ -21,7 +20,7 @@ export const generateTasksEasy = (countTask: number, mathActions: string[]) => {
     }
   }
 
-  // Все нижние if`ы нужны чтобы гибко настраивать примеры
+
   if (mathActions.includes("+")) {
     while (arrayTasksPlus.length + 1 <= countTask / mathActions.length) {
       const firstNumber = Math.ceil(Math.random() * 25);
@@ -73,7 +72,6 @@ export const generateTasksEasy = (countTask: number, mathActions: string[]) => {
     ...arrayTasksDivision,
   ];
 
-  // Рандомно мешаю массив
   resultArray.sort(() => Math.random() - 0.5);
 
   return resultArray;

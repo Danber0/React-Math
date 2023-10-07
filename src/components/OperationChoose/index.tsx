@@ -28,8 +28,8 @@ export const OperationChoose: React.FC = () => {
     count: "5",
   });
 
-  // Хз какой тут тип писать
-  const onClickChangeAction = (event: any) => {
+  const onClickChangeAction = (event: React.BaseSyntheticEvent) => {
+
     if (event.target.className.includes("mark")) {
       if (
         !action.actionMark.includes(event.target.textContent) &&

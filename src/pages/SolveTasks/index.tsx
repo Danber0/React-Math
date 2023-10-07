@@ -39,7 +39,7 @@ export const SolveTasks: React.FC<SolveTasksProps> = ({ timer }) => {
         correctRef.current?.classList.remove("correct");
       }, 450);
       soundSuccess();
-      toast.success("Правильно!");
+      toast.success("Correct!");
       setCurrentTask(currentTask + 1);
       setInputValue("");
 
@@ -52,7 +52,7 @@ export const SolveTasks: React.FC<SolveTasksProps> = ({ timer }) => {
     } else {
       if (String(answerTask[currentTask]).length === value.length) {
         correctRef.current?.classList.add("wrong");
-        toast.error("Не верно!");
+        toast.error("Wrong!");
         errorSound();
         timeOut = setTimeout(() => {
           correctRef.current?.classList.remove("wrong");
@@ -69,7 +69,7 @@ export const SolveTasks: React.FC<SolveTasksProps> = ({ timer }) => {
       <div className="solve__content">
         <div className="solve__content-top">
           <div>
-            Current problem: <span className="color">{currentTask + 1} </span>из
+            Current problem: <span className="color">{currentTask + 1} </span> of
             <span className="color"> {actionInfo.count}</span>
           </div>
           <div>
